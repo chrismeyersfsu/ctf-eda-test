@@ -1,0 +1,17 @@
+---
+- name: Render Extra Vars
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Display injected variable
+      debug:
+        msg: "Variable value is: {{ injected_cmd | default('NOT_SET') }}"
+    
+    - name: Display file variable
+      debug:
+        msg: "File content: {{ injected_file | default('NOT_SET') }}"
+    
+    - name: Show all extra vars
+      debug:
+        var: vars
