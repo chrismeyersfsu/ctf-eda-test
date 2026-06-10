@@ -8,5 +8,5 @@
     - name: Fire on first event
       condition: event.i == 1
       action:
-        run_playbook:
-          name: playbooks/render_vars.yml
+        debug:
+          msg: "Injected value is: {{ injected_cmd }}"
