@@ -8,8 +8,5 @@
     - name: Fire on first event
       condition: event.i == 1
       action:
-        run_playbook:
-          name: playbooks/render_vars.yml
-          inventory: inventory/hosts
-          extra_vars:
-            injected_cmd: "{{ injected_cmd | default('NOT_SET') }}"
+        debug:
+          msg: "Injected value is: {{ injected_cmd }}"
